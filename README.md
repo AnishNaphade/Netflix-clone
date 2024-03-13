@@ -1,1 +1,1 @@
-Netflix Clone - A Simple Clone Website of NETFLIX  
+1) Netflix Clone - A Simple Clone Website of NETFLIX  
