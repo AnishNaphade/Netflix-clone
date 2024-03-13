@@ -1,0 +1,66 @@
+
+    [
+        {
+          "id": 1,
+          "category": "Space",
+          "title": "Learn About the Andromeda Galaxy",
+          "date": "Nov 12",
+          "content": "The Andromeda Galaxy is a barred spiral galaxy and is the nearest major galaxy to the Milky Way.<a href=></a>"  ,
+          "imagePath": "/SEM3/WT/galaxy.jpg" ,
+          "link" : "andromeda.html"
+          
+
+        },
+        {
+          "id": 2,
+          "category": "Galaxies",
+          "title": "Learn about Different Galaxies",
+          "date": "Nov 11",
+          "content": "A galaxy is a huge collection of gas, dust, and billions of stars and their solar systems.",
+          "imagePath": "/SEM3/WT/pexels-hristo-fidanov-1252890.jpg",
+          "link" : "galaxies.html"
+        },
+        {
+          "id": 3,
+          "category": "NASA",
+          "title": "NASA Planning to Launch Space Shuttle Program Again",
+          "date": "Nov 12",
+          "content": "The Discovery space shuttle program might be implemented again in the coming years.",
+          "imagePath": "/SEM3/WT/NASA.jpg",
+          "link" : "NASA.html"
+        },
+        {
+          "id": 4,
+          "category": "Earth",
+          "title": "The Blue Planet - Earth",
+          "date": "Nov 11",
+          "content": "Earth is the third planet away from the sun and the only one in the 'Goldilocks zone' which is habitable for life.",
+          "imagePath": "/SEM3/WT/earth.jpg",
+          "link" : "earth.html"
+        },
+        {
+          "id": 5,
+          "category": "Solar System",
+          "title": "Learn about the Solar System",
+          "date": "Nov 12",
+          "content": "Our Solar System is unique - it has a planet called Earth which contains water and is habitable for life.",
+          "imagePath": "/SEM3/WT/solar system.jpg",
+          "link" : "solarsystem.html"
+        },
+        {
+          "id": 6,
+          "category": "Mars",
+          "title": "Elon Musk Planning to Send Humans to Mars by 2030",
+          "date": "Nov 11",
+          "content": "Elon Musk's Starship mission is planning to take humans to the red planet by the end of 2030.",
+          "imagePath": "/SEM3/WT/mars.jpg",
+          "link" : "mars.html"
+        }
+      ]
+      
+
+
+
+
+
+

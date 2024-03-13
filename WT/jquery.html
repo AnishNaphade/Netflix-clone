@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish E-commerce Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        header {
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .section {
+            flex: 1;
+            margin: 15px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #fff;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .addToCart {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .addToCart:hover {
+            background-color: #0056b3;
+        }
+
+        #cartItems {
+            list-style: none;
+            padding: 0;
+        }
+
+        #cartItems li {
+            margin-bottom: 10px;
+        }
+
+        .removeItem {
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .removeItem:hover {
+            background-color: #c82333;
+        }
+
+        #btnCheckout {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #btnCheckout:hover {
+            background-color: #218838;
+        }
+
+        #loginForm {
+            text-align: center;
+        }
+
+        #loginForm input {
+            padding: 10px;
+            margin-bottom: 10px;
+            width: 80%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #loginForm button {
+            padding: 10px 15px;
+            background-color: #dc3545;
+            color: #fff;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #loginForm button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="sony">S O N Y</h1>
+</header>
+
+<main>
+
+    <div class="section" id="productListing">
+        <h2>Product Listing</h2>
+        <div class="product">
+            <img src="01_ZV-1F_SONY.webp" alt="Product 1">
+            <h3>SONY ZV-1F-59,999/-</h3>
+            <p>Easy-to-use and with dazzling image quality, the ZV-1F is the ideal next step for content creators and vloggers.</p>
+            <button class="button addToCart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="02_ZV-1.webp" alt="Product 2">
+            <h3>SONY ZV-1-49,999/-</h3>
+            <p>Created for creation
+Pictured with optional GP-VPT2BT Shooting Grip</p>
+            <button class="button addToCart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="05_ZV-E10.webp" alt="Product 2">
+            <h3>ZV-E10-79,999/-</h3>
+            <p>Capture more of your world,Large APS-C type 24.2-megapixel2 Exmor™ CMOS sensor</p>
+            <button class="button addToCart">Add to Cart</button>
+        </div>
+    </div>
+
+    <div class="section" id="shoppingCart">
+        <h2>Shopping Cart</h2>
+        <ul id="cartItems">
+            
+        </ul>
+        <button id="btnRemoveItem" class="button removeItem">Remove Item</button>
+        <button id="btnCheckout" class="button">Checkout</button>
+    </div>
+
+    <div class="section" id="userAccount">
+        <h2>User Account</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Username">
+            <br>
+            <input type="password" placeholder="Password">
+            <br>
+            <button type="submit" class="button">Login</button>
+        </form>
+    </div>
+
+</main>
+
+<script>
+    $(document).ready(function () {
+        $(".addToCart").click(function () {
+            var productName = $(this).siblings("h3").text();
+            $("#cartItems").append("<li>" + productName + "</li>");
+        });
+
+        
+        $("#btnRemoveItem").click(function () {
+            var lastCartItem = $("#cartItems li:last-child");
+            if (lastCartItem.length > 0) {
+                lastCartItem.remove();
+                alert("Item removed from the cart.");
+            } else {
+                alert("Cart is empty. No item to remove.");
+            }
+        });
+
+        $("#btnCheckout").click(function () {
+            var cartItems = $("#cartItems li").length;
+            alert("Proceed to checkout with " + cartItems + " item(s).");
+        });
+
+        $("#loginForm").submit(function (event) {
+            event.preventDefault();
+            alert("Login form submitted!");
+        });
+    });
+</script>
+</body>
+</html>
